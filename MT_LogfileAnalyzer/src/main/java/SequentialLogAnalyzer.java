@@ -25,7 +25,6 @@ public class SequentialLogAnalyzer {
             fileCounts.forEach((level, count) -> System.out.println(level + ": " + count));
             System.out.println();
 
-            // Gesamtzähler aktualisieren
             fileCounts.forEach((level, count) -> totalCounts.put(level, totalCounts.get(level) + count));
         }
 
@@ -46,7 +45,7 @@ public class SequentialLogAnalyzer {
                 for (String level : LOG_LEVELS) {
                     if (line.contains(level)) {
                         counts.put(level, counts.get(level) + 1);
-                        break; // Ein Level pro Zeile zählen
+                        break;
                     }
                 }
             }
